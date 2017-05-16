@@ -1,3 +1,5 @@
+//bio object
+
 var bio = {
     "name": "Phil Marshall",
     "role": "Web Developer",
@@ -14,6 +16,8 @@ var bio = {
         "Javascript", "HTML", "CSS", "Product Management", "Bootstrap"
     ]
 };
+
+// bio function
 
 bio.display = function() {
 
@@ -41,6 +45,8 @@ bio.display = function() {
 
 bio.display();
 
+// work object
+
 var work = {
     "jobs": [{
         "employer": "The Paley Center for Media",
@@ -58,7 +64,9 @@ var work = {
     }]
 };
 
-/*work.display = function(){
+// work function
+
+work.display = function(){
     for (var i = 0; i < work.jobs.length; i++) {
         // created new div for work experience
         $("workExperience").append(HTMLworkStart);
@@ -72,7 +80,7 @@ var work = {
     }
 };
 
-work.display();*/
+work.display();
 
 // education object
 
@@ -101,6 +109,7 @@ var education = {
 };
 
 //education function
+
 education.display = function() {
     for (var i = 0; i < education.schools.length; i++) {
         $("#education").append(HTMLschoolStart);
@@ -128,6 +137,7 @@ education.display = function() {
 
 education.display();
 
+// project object
 
 var projects = {
     "projects": [{
@@ -194,7 +204,7 @@ projects.display = function() {
         var formattedDates = HTMLprojectDates.replace("%data%", projects.projects[project].dates);
         $(".project-entry:last").append(formattedDates);
 
-        var formattedDescription = HTMLprojectDescription.replace("%data%", projects.projects[project].description)
+        var formattedDescription = HTMLprojectDescription.replace("%data%", projects.projects[project].description);
         $(".project-entry:last").append(formattedDescription);
 
         if (projects.projects[project].images.length > 0) {
