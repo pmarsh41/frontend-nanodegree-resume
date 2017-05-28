@@ -11,7 +11,7 @@ var bio = {
         "location": "Astoria, NY"
     },
     "welcomeMessage": "lorem ipsum dolor sit",
-    "picture": 'images/fry.jpg',
+    "biopic": 'images/fry.jpg',
     "skills": [
         "Javascript", "HTML", "CSS", "Product Management", "Bootstrap"
     ]
@@ -43,22 +43,20 @@ bio.display = function() {
 
 };
 
-bio.display();
-
 // work object
 
 var work = {
     "jobs": [{
         "employer": "The Paley Center for Media",
         "title": "Web Producer, Interactive Media",
-        "locations": "New York, New York",
+        "location": "New York, New York",
         "dates": "2015-Present",
         "description": "Bacon ipsum dolor amet frankfurter turkey pastrami nisi. Shankle ex consectetur pork loin. Commodo corned beef leberkas fugiat fatback landjaeger short loin frankfurter ullamco minim. Dolore veniam occaecat t-bone pastrami eu ribeye in shank dolore aute pork chop."
 
     }, {
         "employer": "Squad Car Media",
         "title": "Project Manager",
-        "locations": "Houston, TX",
+        "location": "Houston, TX",
         "dates": "2013-2015",
         "description": "Bacon ipsum dolor amet frankfurter turkey pastrami nisi. Shankle ex consectetur pork loin. Commodo corned beef leberkas fugiat fatback landjaeger short loin frankfurter ullamco minim. Dolore veniam occaecat t-bone pastrami eu ribeye in shank dolore aute pork chop."
     }]
@@ -74,34 +72,32 @@ work.display = function() {
         var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[i].employer);
         var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[i].title);
         $(".work-entry:last").append(formattedEmployer + formattedTitle);
-
         $(".work-entry:last").append(HTMLworkDates.replace("%data%", work.jobs[i].dates));
+        $(".work-entry:last").append(HTMLworkLocation.replace("%data%", work.jobs[i].location));
         $(".work-entry:last").append(HTMLworkDescription.replace("%data%", work.jobs[i].description));
     }
 };
-
-work.display();
 
 // education object
 
 var education = {
     "schools": [{
         "name": "St. Francis College",
-        "city": "Brooklyn, NY",
+        "location": "Brooklyn, NY",
         "degree": "BA",
         "majors": ["Philosophy", "Political Science"],
-        "gradDate": "2010",
+        "dates": "2010",
         "url": "http://sfc.edu"
     }, {
         "name": "The Iron Yard",
-        "city": "Houston, TX",
+        "location": "Houston, TX",
         "degree": "Immersive Bootcamp",
         "majors": "Front End Development",
         "dates": "2015",
         "url": "https://www.theironyard.com/"
     }],
     "onlineCourses": [{
-        "title": "Front End Development Nanodegree",
+        "title": ["Front End Development Nanodegree"],
         "school": "Udacity",
         "dates": "2017",
         "url": "https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001"
@@ -118,7 +114,7 @@ education.display = function() {
         var formattedDegree = HTMLschoolDegree.replace("%data%", education.schools[i].degree);
         $(".education-entry:last").append(formattedName + formattedDegree);
         $(".education-entry:last").append(HTMLschoolDates.replace("%data%", education.schools[i].dates));
-        $(".education-entry:last").append(HTMLschoolLocation.replace("%data%", education.schools[i].city));
+        $(".education-entry:last").append(HTMLschoolLocation.replace("%data%", education.schools[i].location));
         $(".education-entry:last").append(HTMLschoolMajor.replace("%data%", education.schools[i].majors));
         //$(".education-entry:last").append(HTMLonlineURL.replace("%data%", education.schools[i].url));
     }
@@ -134,8 +130,6 @@ education.display = function() {
         $(".education-entry:last").append(HTMLonlineURL.replace("%data%", education.onlineCourses[k].url));
     }
 };
-
-education.display();
 
 // project object
 
@@ -162,6 +156,12 @@ projects.display = function() {
         }
     }
 };
+
+bio.display();
+
+work.display();
+
+education.display();
 
 projects.display();
 
